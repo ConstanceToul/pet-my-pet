@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show, :edit, :update]
 
-  resources
-
   namespace :owner do
     resources :pets
     resources :bookings, only: [:index]
