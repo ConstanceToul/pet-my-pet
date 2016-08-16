@@ -1,3 +1,48 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px;
+}
+.banner #try {
+  margin-top: 10px;
+}
+
+.search {
+  padding: 15px 30px;
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .flex-item-date {
+    width: 300px;
+  }
+}
+
+.flexbox {
+  background:rgba(0,0,0,0.6);
+  border: 2px solid #414141;
+  border-radius: 5px;
+}
+
 /* -------------------------------------
  * CSS code specific to home page
  * (margin/padding adjustments)
