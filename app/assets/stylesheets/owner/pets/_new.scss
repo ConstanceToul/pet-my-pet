@@ -23,15 +23,25 @@
   color: #6AF79A;
 }
 
-.btn {
+.button {
+  border-radius: 5px;
+  background-color: #6AF79A;
+  color: #444B6C;
+  padding: 15px;
+}
+
+.button:hover
+{
   border-radius: 5px;
   background-color: #6AF79A;
   color: #444B6C;
 }
 
-.btn:hover
-{
-  border-radius: 5px;
-  background-color: #6AF79A;
-  color: #444B6C;
+.padding {
+  padding-bottom: 20px;
+  padding-top: 0px;
+}
+
+.width {
+  width: 200px;
 }
