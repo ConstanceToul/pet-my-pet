@@ -10,16 +10,12 @@
             <% @pets.each do |pet| %>
               <div class="col-xs-12 col-sm-4">
                 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path pet.picture_url %>);">
-<!--                   <div class="card-category">
-                    <%= pet.species.capitalize %>
-                  </div> -->
+
                   <div class="card-description">
                     <h2><%= pet.name %></h2>
                     <p><%= pet.title %></p>
                   </div>
-<!--                   <div class="card-address">
-                    <%= pet.address %>
-                  </div> -->
+
                   <div class="card-price">
                     <p><%= pet.price %>€/day</p>
 

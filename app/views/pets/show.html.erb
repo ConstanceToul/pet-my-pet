@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-md-6 col-md-offset-1">
       <div class="basic-info">
         <div>
-          <%= image_tag 'cats_in_paris/cat-big.jpg', class: 'photo' %>
+          <%= image_tag @pet.picture_url, class: 'photo' %>
         </div>
         <div class="details">
           <h3><%= @pet.name %>'s Details</h3>
