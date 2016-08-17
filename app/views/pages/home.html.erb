@@ -6,7 +6,7 @@
   </div>
   <div class="search">
     <div class="flex-item">
-      <input type="address" class="form-control" id="location" placeholder="Find your best pet location!">
+      <input type="address" class="form-control" id="location" placeholder="Pet's address">
     </div>
     <div class="flex-item-date">
       <div class="input-group">
@@ -20,9 +20,16 @@
         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
       </div>
     </div>
-    <div class="flex-item">
-      <button type="submit" class="btn btn-default btn-primary">Search</button>
+    <div class="flex-item-select">
+      <select id="pets" name="Pets" class="form-control">
+        <option value="1">Dog</option>
+        <option value="2">Cat</option>
+      </select>
+    </div>
+    <div class="flex-item-btnsearch">
+     <%= link_to "search", pets_path, class: "btn btn-default btn-primary" %>
     </div>
   </div>
 </div>
 <!-- add a form input with type of dog, place, dates and search bar  -->
+
