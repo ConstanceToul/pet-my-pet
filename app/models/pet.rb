@@ -10,5 +10,6 @@ class Pet < ApplicationRecord
   validates :gender, presence: true, inclusion: { in: ["Female", "Male"], allow_nil: false }
   validates :price, presence: true
   validates :description, presence: true, length: { minimum: 6 }
+  validates :address, presence: true
 
 end
