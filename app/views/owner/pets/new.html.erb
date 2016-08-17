@@ -2,9 +2,8 @@
 
   <div class="container">
 
-  <%= simple_form_for(@pet) do |p| %>
-  <%= p.error_notification %>
-
+  <%= simple_form_for(@pet, url: owner_pets_path, method: :post) do |p| %>
+    <%= p.error_notification %>
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="card-white">
@@ -14,7 +13,7 @@
 
           <div class="row">
             <div class="col-xs-12 col-md-6">
-              <%= p.input :gender, collection: [ "female", "male"] %>
+              <%= p.input :gender, collection: Pet::GENDERS %>
             </div>
             <div class="col-xs-12 col-md-6">
               <%= p.input :birth_date, start_year: Date.today.year,

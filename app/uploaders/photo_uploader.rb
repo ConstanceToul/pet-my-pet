@@ -6,8 +6,4 @@ class PhotoUploader < CarrierWave::Uploader::Base
  process eager: true
  process convert: 'jpg'
 
-  version :standard do
-    resize_to_fit 800, 600
-  end
-
 end
