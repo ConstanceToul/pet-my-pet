@@ -1,0 +1,34 @@
+<div class="wrapper">
+
+  <div class= "title">
+   <h1> Your pets : </h1>
+  </div>
+
+  <% @pets.each do |pet| %>
+
+    <div class="pet">
+
+      <div class="pet-photo">
+        <%= cl_image_tag pet.photo %>
+      </div>
+
+      <div class="pet-body">
+        <h3> <%= pet.name %> </h3>
+        <p> <%= pet.price%>€ / day </p>
+      </div>
+
+      <ul class="list-inline pet-actions">
+        <li><%= link_to "View", owner_pet_path(pet) %></li>
+        <li><%= link_to "Edit", edit_owner_pet_path(pet) %></li>
+        <li><%=link_to "Delete", root_path, method: :delete %> </li>
+      </ul>
+
+    </div>
+
+  <% end %>
+</div>
+
+
+
+
+
