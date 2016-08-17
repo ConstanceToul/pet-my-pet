@@ -1,0 +1,47 @@
+
+.wrapper {
+  background-color: #E8E8E8;
+  opcacity: 0.9;
+  width : 100%;
+}
+
+.title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 64px;
+  color: #FFFF8F;
+}
+
+.container {
+  background-color: #FFFFFF;
+  color: #444B6C;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.container h3 {
+  color: #6AF79A;
+}
+
+.button {
+  border-radius: 5px;
+  background-color: #6AF79A;
+  color: #444B6C;
+  padding: 15px;
+}
+
+.button:hover
+{
+  border-radius: 5px;
+  background-color: #6AF79A;
+  color: #444B6C;
+}
+
+.padding {
+  padding-bottom: 20px;
+  padding-top: 0px;
+}
+
+.width {
+  width: 200px;
+}

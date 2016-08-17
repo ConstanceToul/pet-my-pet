@@ -1,0 +1,43 @@
+<div class="wrapper">
+
+  <div class="title">
+    <h1> Add your pet </h1>
+    <%= simple_form_for(@pet) do |p| %>
+    <%= p.error_notification %>
+  </div>
+
+  <div class="container">
+    <h3>Tell us about your pet</h3>
+    <%= p.input :name, placeholder: 'ex: croquette' %>
+    <%= p.input :species, priority: ["dog"], collection: Pet::SPECIES %>
+    <%= p.input :gender, collection: [ "female", "male"] %>
+    <%= p.input :birth_date, start_year: Date.today.year - 18,
+                              end_year: Date.today.year - 90, discard_day: true,
+                              order: [:month, :year] %>
+    <%= p.input :height, label: "Height (inches)" %>
+    <%= p.input :weight, label: "Weight (kg)" %>
+    <%= p.input :description, placeholder: 'Jolie chat persane grise, qui est très calin. Attention, il mord de temps en temps. Dans le fond, il est gentil.' %>
+    <%= p.input :food, collection:["Croquettes Royal Canin", "Croquettes Friskies", "Repas pour humains", "Graines", "Restes de poulet", "Caviar"], as: :check_boxes%>
+    <%= p.input :exercise %>
+    <%= p.input :title, label: "Title of your add", hint: "Choose a fun title to attract as many people as possible" %>
+   </div>
+
+    <div class="container">
+    <h3>Pictures</h3>
+    <%= p.input :picture_url %>
+   </div>
+
+   <div class="container">
+    <h3>Price</h3>
+    <%= p.input :price, label: "Daily rental price (€)", hint: '15€ for a nice and beautiful dog, 5€ for an ugly and dangerous cat' %>
+   </div>
+
+
+   <div class="text-center padding">
+    <%= p.button :submit, 'List my pet !', class: 'button'  %>
+    <% end %>
+  </div>
+
+</div>
+
+
