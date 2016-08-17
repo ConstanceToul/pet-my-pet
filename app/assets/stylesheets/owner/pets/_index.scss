@@ -1,0 +1,49 @@
+.title {
+  padding-top : 15px;
+  color: #B80D57;
+  padding-left: 15px
+}
+
+.pet {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+/* Body design */
+.pet-body {
+  flex: 1 0 auto;
+}
+
+.pet-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.pet-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* Product image */
+.pet-photo {
+  border-radius: 10px;
+  margin-right: 20px;
+  flex: 0 0 10%;
+}
+
+/* Controls design */
+.pet-actions{
+  flex: 0 0 20%;
+  margin: 0px;
+  color: #6AF79A;
+}
+
+/* Hover effects */
+.pet:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
