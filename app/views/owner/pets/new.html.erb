@@ -8,7 +8,7 @@
 
   <div class="container">
     <h3>Tell us about your pet</h3>
-    <%= p.input :name, label_html: { class: 'my_class' }, placeholder: 'ex: croquette' %>
+    <%= p.input :name, placeholder: 'ex: croquette' %>
     <%= p.input :species, priority: ["dog"], collection: Pet::SPECIES %>
     <%= p.input :gender, collection: [ "female", "male"] %>
     <%= p.input :birth_date, start_year: Date.today.year - 18,
