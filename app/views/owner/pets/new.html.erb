@@ -1,0 +1,73 @@
+<div class="wrapper">
+
+  <div class="container">
+
+  <%= simple_form_for(@pet, url: owner_pets_path, method: :post) do |p| %>
+    <%= p.error_notification %>
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="card-white">
+          <h3>Tell us about your pet</h3>
+            <%= p.input :name, placeholder: 'ex: croquette' %>
+            <%= p.input :species, priority: ["dog"], collection: Pet::SPECIES %>
+
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <%= p.input :gender, collection: Pet::GENDERS %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <%= p.input :birth_date, start_year: Date.today.year,
+                                    end_year: Date.today.year - 90, discard_day: true,
+                                    order: [:month, :year] %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <%= p.input :height, label: "Height (inches)" %>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <%= p.input :weight, label: "Weight (kg)" %>
+            </div>
+          </div>
+
+          <%= p.input :description, placeholder: 'Jolie chat persane grise, qui est très calin. Attention, il mord de temps en temps. Dans le fond, il est gentil.' %>
+          <%= p.input :food, collection:["Croquettes Royal Canin", "Croquettes Friskies", "Repas pour humains", "Graines", "Restes de poulet", "Caviar"], as: :check_boxes%>
+          <%= p.input :exercise %>
+          <%= p.input :title, label: "Title of your add", hint: "Choose a fun title to attract as many people as possible" %>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="card-white">
+          <h3>Pictures</h3>
+          <%= p.input :photo %>
+          <%= p.input :photo_cache, as: :hidden %>
+      </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <div class="card-white">
+          <h3>Price</h3>
+          <%= p.input :price, label: "Daily rental price (€)", hint: '15€ for a nice and beautiful dog, 5€ for an ugly and dangerous cat' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
+          <%= p.button :submit, 'List my pet !', class: 'button'  %>
+      </div>
+    </div>
+
+
+  <% end %>
+  </div>
+</div>
+
+
