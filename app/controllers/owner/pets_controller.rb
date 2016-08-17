@@ -14,7 +14,7 @@ class Owner::PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
-      redirect_to owner_pet_path(@pet)
+      redirect_to owner_pets_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class Owner::PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :title, :species, :gender, :birth_date,
-     :height, :weight, :picture_url, :description, :food, :exercise, :price)
+     :height, :weight, :picture_url, :description, :food, :exercise, :price, :photo, :photo_cache)
   end
 
 end

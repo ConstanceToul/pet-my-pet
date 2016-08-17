@@ -9,5 +9,4 @@ class PetsController < ApplicationController
     @pet = Pet.find_by(id: 36)
 
   end
-
 end
