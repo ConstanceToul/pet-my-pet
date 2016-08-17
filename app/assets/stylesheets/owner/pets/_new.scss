@@ -1,9 +1,4 @@
 
-.wrapper {
-  background-color: #E8E8E8;
-  opcacity: 0.9;
-  width : 100%;
-}
 
 .title {
   padding-top: 20px;
@@ -12,15 +7,11 @@
   color: #FFFF8F;
 }
 
-.container {
-  background-color: #FFFFFF;
-  color: #444B6C;
-  font-size: 14px;
-  margin-bottom: 30px;
-}
 
-.container h3 {
+.card-white h3 {
   color: #6AF79A;
+  margin-top : 0px;
+  margin-bottom: 16px;
 }
 
 .button {
@@ -28,6 +19,9 @@
   background-color: #6AF79A;
   color: #444B6C;
   padding: 15px;
+  margin:auto;
+  display:block;
+
 }
 
 .button:hover
@@ -37,11 +31,3 @@
   color: #444B6C;
 }
 
-.padding {
-  padding-bottom: 20px;
-  padding-top: 0px;
-}
-
-.width {
-  width: 200px;
-}

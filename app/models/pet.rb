@@ -4,6 +4,8 @@ class Pet < ApplicationRecord
   has_many :bookings
   belongs_to :user
 
+  mount_uploader :photo, PhotoUploader
+
   validates :name, presence: true
   validates :species, presence: true, inclusion: { in: SPECIES, allow_nil: false }
   validates :title, presence: true
