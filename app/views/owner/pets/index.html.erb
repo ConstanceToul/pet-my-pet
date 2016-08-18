@@ -1,7 +1,7 @@
 <div class="wrapper">
 
   <div class= "title">
-   <h1> Your pets : </h1>
+   <h1> Your pets </h1>
   </div>
 
   <% @pets.each do |pet| %>
@@ -13,11 +13,13 @@
       </div>
 
       <div class="pet-body">
-        <h3> <%= pet.name %> </h3>
+        <h2> <%= pet.name %> </h2>
+        <p> <%= pet.title%> </p>
         <p> <%= pet.price%>€ / day </p>
+        <p> 3 reviews </p>
       </div>
 
-      <ul class="list-inline pet-actions">
+      <ul class="list-unstyled pet-actions">
         <li><%= link_to "View", owner_pet_path(pet) %></li>
         <li><%= link_to "Edit", edit_owner_pet_path(pet) %></li>
         <li><%=link_to "Delete", root_path, method: :delete %> </li>
