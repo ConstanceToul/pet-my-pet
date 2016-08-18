@@ -12,5 +12,6 @@ class Pet < ApplicationRecord
   validates :gender, presence: true, inclusion: { in: GENDERS, allow_nil: false }
   validates :price, presence: true
   validates :description, presence: true, length: { minimum: 6 }
+  validates :photo, presence: true
 
 end
