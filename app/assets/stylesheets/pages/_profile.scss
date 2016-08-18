@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 50%;
   font: inherit;
   vertical-align: baseline;
   outline: none;
@@ -15,14 +15,8 @@
   box-sizing: border-box;
 }
 }
-.myprofile { overflow-y: scroll;}
-body {
-  background: #f0f0f0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #313131;
-  font-size: 80%;
-  line-height: 1;
-}
+.myprofile{ overflow-y: scroll;}
+
 
 
 
@@ -68,10 +62,18 @@ h1 > span {
   white-space: normal;
 }
 
+body {
+  background: #f0f0f0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #313131;
+  font-size: 2em;
+  line-height: 1;
+}
+
 
 h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 3em;
+  font-size: 2em;
   line-height: 1.4em;
   letter-spacing: normal;
   margin-bottom: 20px;
@@ -85,7 +87,7 @@ h2 {
 
 p {
   display: block;
-  font-size: 2em;
+  font-size: 1em;
   line-height: 1.55em;
   margin-bottom: 22px;
   color: #555;
@@ -95,7 +97,7 @@ p {
 /** css structure **/
 #w {
   display: block;
-  width: 750px;
+  width: 800px;
   margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 45px;
@@ -192,7 +194,7 @@ p {
 }
 .setting span img {
   cursor: pointer;
-}
 
+}
 }
 
