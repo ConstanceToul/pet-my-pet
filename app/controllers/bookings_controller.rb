@@ -5,9 +5,9 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.user = current_user
     @booking.price = @pet.price
+    @booking.status = "Confirmed"
 
     @booking.save
-    raise
   end
 
 end
