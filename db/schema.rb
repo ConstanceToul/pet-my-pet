@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20160818115317) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
-    t.string   "address"
     t.string   "photo"
+    t.string   "address"
     t.index ["user_id"], name: "index_pets_on_user_id", using: :btree
   end
 

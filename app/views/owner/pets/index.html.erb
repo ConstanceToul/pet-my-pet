@@ -22,7 +22,7 @@
       <ul class="list-unstyled pet-actions">
         <li><%= link_to "View", owner_pet_path(pet) %></li>
         <li><%= link_to "Edit", edit_owner_pet_path(pet) %></li>
-        <li><%=link_to "Delete", root_path, method: :delete %> </li>
+        <li><%=link_to "Delete", owner_pet_path(pet), method: :delete, data: { confirm: "Are you sure you want to delete #{pet.name} ?" } %> </li>
       </ul>
 
     </div>
