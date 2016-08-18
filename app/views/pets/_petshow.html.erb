@@ -39,19 +39,27 @@
         <p>Cost: <%= @pet.price %>€/day</p>
       </div>
 
-        <% unless @pet.user_id == current_user.id %>
-            <div class="reserve">
-           <%= link_to "Pet me!", pet_bookings_path(@pet), method: 'post', class: "navbar-wagon-item navbar-wagon-button btn"%>
-          </div>
-        <% end %>
+<% if current_user %>
+     <% if @pet.user_id != current_user.id %>
+        <div class="reserve">
+        <%= link_to "Pet me!", pet_bookings_path(@pet), method: 'post', class: "navbar-wagon-item navbar-wagon-button btn"%>
+        </div>
+      <% end %>
+ <% else %>
+    <div class="reserve">
+    <%= link_to "Pet me!", pet_bookings_path(@pet), method: 'post', class: "navbar-wagon-item navbar-wagon-button btn"%>
+    </div>
+<%end%>
 
-        <% if @pet.user_id == current_user.id %>
-          <%= link_to "Back", owner_pets_path %>
-        <% else %>
-          <br>
-           <%= link_to "Back to search results", pets_path, class: "Link" %>
-        <% end %>
 
+<% if current_user %>
+    <% if @pet.user_id == current_user.id %>
+    <%= link_to "Back", owner_pets_path %>
+    <% end %>
+ <% else %>
+    <br>
+    <%= link_to "Back to search results", pets_path, class: "Link" %>
+<%end%>
 
   </div>
 </div>
