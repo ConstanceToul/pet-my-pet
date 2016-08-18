@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:index, :show, :edit, :update]
-
   namespace :owner do
     resources :pets
     resources :bookings, only: [:index]
@@ -18,7 +16,7 @@ Rails.application.routes.draw do
 
 
   namespace :renter do
-    resources :bookings, only: [:index, :edit]
+    resources :bookings, only: [:index, :edit, :destroy]
   end
 
 
