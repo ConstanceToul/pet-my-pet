@@ -2,7 +2,7 @@
   <div class ="myprofile-body">
   <div id="w">
     <div id="content" class="clearfix">
-      <div id="userphoto"><img src="app/assets/images/dog-user.png" alt="My User Photo"></div>
+      <div id="userphoto"> <%= cl_image_tag ""%></div>
       <h1> My cool profile user</h1>
 
       <nav id="profiletabs">
@@ -14,7 +14,7 @@
       </nav>
 
       <section id="Key info">
-        <h2> Hello there, this is my profile, check it out! </h2>
+        <h2> Welcome to you, lover of pets !</h2>
         <p><%= @current_user.first_name %> <%= @current_user.last_name.upcase %></p>
         <p>Email :  <%= @current_user.email %></p>
         <p>Address : <%= @current_user.address %></p>
@@ -25,7 +25,7 @@
       <section id="pets" class="hidden">
         <p>Pets I recommend</p>
 
-        <p class="activity">Careful Brisky eats a lot! </p>
+        <p class="activity">Careful Brisky, eats a lot! </p>
 
         <p class="activity">Such a good time with Fury</p>
 
