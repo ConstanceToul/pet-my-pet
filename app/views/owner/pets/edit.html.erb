@@ -2,13 +2,13 @@
 
   <div class="container">
 
-  <%= simple_form_for(@pet, url: owner_pets_path, method: :post) do |p| %>
+  <%= simple_form_for(@pet, url: owner_pet_path(@pet), method: :patch) do |p| %>
     <%= p.error_notification %>
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="card-white">
           <h3>Tell us about your pet</h3>
-            <%= p.input :name, placeholder: 'ex: croquette', input_html: { class: "small-text"} %>
+            <%= p.input :name, placeholder: 'ex: croquette' %>
             <%= p.input :species, priority: ["dog"], collection: Pet::SPECIES %>
 
           <div class="row">
@@ -31,7 +31,7 @@
             </div>
           </div>
 
-          <%= p.input :description, placeholder: 'Très gentil chien qui adore jouer au ballon. Attention, il mord de temps en temps.', input_html: { class: "small-text"} %>
+          <%= p.input :description, placeholder: 'Très gentil chien qui adore jouer au ballon. Attention, il mord de temps en temps.' %>
           <%= p.input :food, collection:["Croquettes Royal Canin", "Croquettes Friskies", "Repas pour humains", "Graines", "Restes de poulet", "Caviar"], as: :check_boxes%>
           <%= p.input :exercise %>
           <%= p.input :title, label: "Title of your add", hint: "Choose a fun title to attract as many people as possible" %>
@@ -44,6 +44,7 @@
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="card-white">
           <h3>Pictures</h3>
+          <%= cl_image_tag @pet.photo, class:"edit_picture" %>
           <%= p.input :photo %>
           <%= p.input :photo_cache, as: :hidden %>
       </div>
@@ -54,14 +55,14 @@
       <div class="col-xs-12 col-md-8 col-md-offset-2">
         <div class="card-white">
           <h3>Price</h3>
-          <%= p.input :price, label: "Daily rental price (€)", hint: '15€ for a nice and beautiful dog, 5€ for an ugly and dangerous cat' %>
+          <%= p.input :price, label: "Daily rental price (€)", hint: '15€ for a nice and beautiful dog, 5€ for an ugly and dangerous cat', input_html: { class: "price_input"}, label_html:{ class: "price_label"}, hint_html:{ class: "price_hint", id: "hint_id"} %>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-md-8 col-md-offset-2">
-          <%= p.button :submit, 'List my pet !', class: 'button'  %>
+          <%= p.button :submit, 'Edit my pet !', class: 'button' %>
       </div>
     </div>
 
@@ -69,7 +70,3 @@
   <% end %>
   </div>
 </div>
-
-
-
-
