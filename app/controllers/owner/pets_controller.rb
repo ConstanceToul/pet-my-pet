@@ -1,5 +1,6 @@
 class Owner::PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: :new
+  before_action :set_pet, only: :destroy
 
   def index
     @pets = current_user.pets
@@ -20,11 +21,18 @@ class Owner::PetsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
 
   def pet_params
     params.require(:pet).permit(:name, :title, :species, :gender, :birth_date,
      :height, :weight, :picture_url, :description, :food, :exercise, :price, :photo, :photo_cache)
+  end
+
+  def set_pet
+    Pet.find(params[:id])
   end
 
 end

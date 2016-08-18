@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-md-6 col-md-offset-1">
       <div class="basic-info">
         <div>
-          <%= image_tag @pet.picture_url, class: 'photo' %>
+          <%= image_tag @pet.photo, class: 'photo' %>
         </div>
         <div class="details">
           <h3><%= @pet.name %>'s Details</h3>
@@ -41,7 +41,7 @@
 
 
       <div class="reserve">
-        <button class="navbar-wagon-item navbar-wagon-button btn">Pet me!</button>
+        <%= link_to "Pet me!", pet_bookings_path(@pet), method: 'post', class: "navbar-wagon-item navbar-wagon-button btn"%>
       </div>
     </div>
 
