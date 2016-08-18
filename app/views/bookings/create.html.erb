@@ -1,9 +1,17 @@
 <h1>Woof! It's a date!</h1>
 
-<p>Congratulations! You have booked a pet-session with <b><%= @pet.name %></b>.</p>
+<p>Congratulations! You have booked a pet-session with <b>
+  <%= link_to @pet.name, pet_path(@pet), target: "blank" %></b>.</p>
 <p>The cost per day for your time with <%= @pet.name %> is <b><%= @pet.price %>€</b>.</p>
 
-<p>Please contact <b><%= @pet.user.email %></b> to schedule a rendez-vous.</p>
+<p>Please contact <b><%= @pet.user.first_name %></b> (<%= @pet.user.email %>) to schedule a rendez-vous.</p>
+
+
+
+<div class="my-bookings">
+  <%= link_to "View all bookings", renter_bookings_path(current_user), class: "navbar-wagon-item navbar-wagon-button btn"%>
+</div>
+
 
 
 
