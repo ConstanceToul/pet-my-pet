@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index]
   end
 
+  get '/profile' => "pages#profile"
 end
