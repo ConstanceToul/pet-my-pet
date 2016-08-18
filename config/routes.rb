@@ -16,10 +16,11 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index]
   end
 
+
   namespace :renter do
     resources :bookings, only: [:index, :edit]
   end
 
 
-
+  get '/profile' => "pages#profile"
 end
