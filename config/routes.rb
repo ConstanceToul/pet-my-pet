@@ -11,13 +11,9 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :pets
-    resources :bookings, only: [:index]
   end
 
-
-  namespace :renter do
-    resources :bookings, only: [:index, :edit, :destroy]
-  end
+  resources :bookings, only: [:index, :edit, :update, :destroy, :show]
 
 
   get '/profile' => "pages#profile"

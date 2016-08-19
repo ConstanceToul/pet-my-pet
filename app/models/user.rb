@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :pets
   has_many :bookings
+
+  validates :address, presence: true
 end
