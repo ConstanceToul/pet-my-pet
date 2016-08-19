@@ -1,3 +1,7 @@
 
 <%= render 'petshow' %>
 
+
+<h1><%= @current_user.first_name %></h1>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&key=AIzaSyB43mAjLeq18-tumQ8ytChKGtMM_Rr1Wx0&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@current_user.address}" %>
+
