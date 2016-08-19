@@ -8,10 +8,31 @@
 
       <%= simple_form_for @pet, url: pets_path, method: :get, html: {class: "form-inline"} do |p| %>
         <%= p.input :address, placeholder: 'Enter city', class: 'form-control flex-item-select', label: false %>
-        <%= p.input :species, collection: Pet::SPECIES, prompt: "Select species", class: 'form-control flex-item-select', label: false %>
+        <%= p.input :species, collection: Pet::SPECIES, prompt: "Select pet type", class: 'form-control flex-item-select', label: false %>
         <%= p.button :submit, 'Search', class: 'form-control flex-item-btnsearch btn btn-primary' %>
       <% end %>
 
   </div>
+  </div>
+
+  <div class="container text-center padded features">
+      <div class="row-icons">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag 'travel.png', class: "dog-icon"%>
+          <h2>Travel without worries</h2>
+          <p>Give your pet a holiday! </p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+         <%= image_tag 'money.png', class: "dog-icon"%>
+          <h2>Make some quick money</h2>
+          <p>No cash issues anymore.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= image_tag 'dogicon.png', class: "dog-icon"%>
+          <h2>Meet pets</h2>
+          <p>Discover pet's lifestyle.</p>
+        </div>
+      </div>
+    </div>
 
 
