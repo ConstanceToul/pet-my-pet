@@ -9,19 +9,20 @@ class PetsController < ApplicationController
       @pets = Pet.where(species: @species, address: @address)
       if current_user
         @user = current_user
-        @pets.select{ |pet| pet.user_id != @user.id}
+        @pets = @pets.select{ |pet| pet.user_id != @user.id}
       end
       if @pets.length > 0
         @message = "Showing #{@species}s in #{@address}"
       else
         @message = "Sorry, there are currently no #{@species}s available in #{@address}."
       end
+
     elsif params[:pet][:species].present? && params[:pet][:address].blank?
       @species = params[:pet][:species]
       @pets = Pet.where(species: @species)
       if current_user
         @user = current_user
-        @pets.select{ |pet| pet.user_id != @user.id}
+        @pets = @pets.select{ |pet| pet.user_id != @user.id}
       end
       if @pets.length > 0
         @message = "Showing all #{@species}s"
@@ -33,7 +34,7 @@ class PetsController < ApplicationController
       @pets = Pet.where(address: @address)
       if current_user
         @user = current_user
-        @pets.select{ |pet| pet.user_id != @user.id}
+        @pets = @pets.select{ |pet| pet.user_id != @user.id}
       end
       if @pets.length > 0
         @message = "Showing all pets in #{@address}"
@@ -42,9 +43,10 @@ class PetsController < ApplicationController
       end
     elsif params[:pet][:species].blank? && params[:pet][:address].blank?
       @pets = Pet.all
+
       if current_user
         @user = current_user
-        @pets.select{ |pet| pet.user_id != @user.id}
+        @pets = @pets.select{ |pet| pet.user_id != @user.id}
       end
       if @pets.length > 0
         @message = "Showing all pets"
