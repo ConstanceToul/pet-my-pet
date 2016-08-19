@@ -1,12 +1,70 @@
-.pet-booking {
-  display: flex;
+.wrapper {
+  background-color: #F0F0F0;
 }
 
-.pet-photo {
-  border-radius: 10px;
-  margin-right: 20px;
-  flex: 0 0 10%;
-  img {
-    width: 100%;
+.title {
+  color: #6AF79A;
+  h1 {
+  font-size: 30px;
+  padding-left: 50px;
   }
 }
+
+.pet-booking {
+  display: flex;
+  margin: 20px 90px;
+  padding: 15px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  &:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+  }
+}
+
+.pet-booking-photo {
+  background-color: white;
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  img {
+    height: 100%;
+  }
+}
+
+
+/* Body design */
+.pet-booking-body {
+  flex: 1 0 auto;
+  text-align: left;
+  color: #547980;
+  line-height: 25px;
+  h2 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 0;
+  line-height: 30px;
+  }
+  p {
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 0;
+  }
+}
+
+
+.pet-booking-actions {
+  flex: 0 0 20%;
+  margin: 0px;
+  color: #6AF79A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 25px;
+}
+

@@ -2,7 +2,9 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @pets = Pet.all
+    @species = params[:pet][:species]
+    @address = params[:pet][:address]
+    @pets = Pet.all.where(species: @species, address: @address)
   end
 
   def show
