@@ -8,8 +8,8 @@
   <div class="search">
 
       <%= simple_form_for @pet, url: pets_path, method: :get, html: {class: "form-inline"} do |p| %>
-        <%= p.input :address, placeholder: 'Where do you live?', class: 'form-control flex-item-select', label: false %>
-        <%= p.input :species, collection: Pet::SPECIES, prompt: "Select species", class: 'form-control flex-item-select', label: false %>
+        <%= p.input :address, placeholder: 'Enter city', class: 'form-control flex-item-select', label: false %>
+        <%= p.input :species, collection: Pet::SPECIES, prompt: "Select pet type", class: 'form-control flex-item-select', label: false %>
         <%= p.button :submit, 'Search', class: 'form-control flex-item-btnsearch btn btn-primary' %>
       <% end %>
 
