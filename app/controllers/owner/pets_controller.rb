@@ -1,5 +1,5 @@
 class Owner::PetsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :new
+  skip_before_action :authenticate_user!
   before_action :set_pet, only: [:destroy, :edit, :update, :show]
 
   def index
@@ -14,7 +14,6 @@ class Owner::PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     @pet.address = current_user.address
-
     if @pet.save
       redirect_to owner_pets_path
     else
