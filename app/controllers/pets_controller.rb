@@ -5,9 +5,12 @@ class PetsController < ApplicationController
     if params[:pet][:species].present? && params[:pet][:address].present?
       @species = params[:pet][:species]
       @address = (params[:pet][:address]).capitalize
-      @user = current_user
+
       @pets = Pet.where(species: @species, address: @address)
-               .where.not(user_id: @user.id)
+      if current_user
+        @user = current_user
+        @pets.select{ |pet| pet.user_id != @user.id}
+      end
       if @pets.length > 0
         @message = "Showing #{@species}s in #{@address}"
       else
@@ -15,9 +18,11 @@ class PetsController < ApplicationController
       end
     elsif params[:pet][:species].present? && params[:pet][:address].blank?
       @species = params[:pet][:species]
-      @user = current_user
       @pets = Pet.where(species: @species)
-               .where.not(user_id: @user.id)
+      if current_user
+        @user = current_user
+        @pets.select{ |pet| pet.user_id != @user.id}
+      end
       if @pets.length > 0
         @message = "Showing all #{@species}s"
       else
@@ -25,17 +30,22 @@ class PetsController < ApplicationController
       end
     elsif params[:pet][:species].blank? && params[:pet][:address].present?
       @address = (params[:pet][:address]).capitalize
-      @user = current_user
       @pets = Pet.where(address: @address)
-               .where.not(user_id: @user.id)
+      if current_user
+        @user = current_user
+        @pets.select{ |pet| pet.user_id != @user.id}
+      end
       if @pets.length > 0
         @message = "Showing all pets in #{@address}"
       else
         @message = "Sorry, there are currently no pets available in #{@address}."
       end
     elsif params[:pet][:species].blank? && params[:pet][:address].blank?
-      @user = current_user
-      @pets = Pet.where.not(user_id: @user.id)
+      @pets = Pet.all
+      if current_user
+        @user = current_user
+        @pets.select{ |pet| pet.user_id != @user.id}
+      end
       if @pets.length > 0
         @message = "Showing all pets"
       else
