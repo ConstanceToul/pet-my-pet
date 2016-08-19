@@ -4,33 +4,15 @@
     <p>Rent wonderful dogs near where you live</p>
     <%= link_to "Try the experience", root_path, class: "btn btn-primary btn-lg", id: "try" %>
   </div>
-  <div class="search">
-    <div class="flex-item">
-      <input type="address" class="form-control" id="location" placeholder="Pet's address">
-    </div>
-    <div class="flex-item-date">
-      <div class="input-group">
-        <input type="text" class="form-control" id="checkin" placeholder="Pet In">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-      </div>
-    </div>
-    <div class="flex-item-date">
-      <div class="input-group">
-        <input type="text" class="form-control" id="checkout" placeholder="Pet Out">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-      </div>
-    </div>
-    <div class="flex-item-select">
-      <select id="pets" name="Pets" class="form-control">
-        <option value="1">Dog</option>
-        <option value="2">Cat</option>
-      </select>
-    </div>
-    <div class="flex-item-btnsearch">
-     <%= link_to "search", pets_path, class: "btn btn-default btn-primary" %>
-    </div>
-  </div>
-</div>
 
-<!-- add a form input with type of dog, place, dates and search bar  -->
+  <div class="search">
+
+      <%= simple_form_for @pet, url: pets_path, method: :get, html: {class: "form-inline"} do |p| %>
+        <%= p.input :address, placeholder: 'Where do you live?', class: 'form-control flex-item-select', label: false %>
+        <%= p.input :species, collection: Pet::SPECIES, prompt: "Select species", class: 'form-control flex-item-select', label: false %>
+        <%= p.button :submit, 'Search', class: 'form-control flex-item-btnsearch btn btn-primary' %>
+      <% end %>
+
+  </div>
+
 
