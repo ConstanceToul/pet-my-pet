@@ -25,12 +25,13 @@
           <div class="badge badge-blue">3</div>
         </div>
       <% end %>
-        <%= current_user.first_name.capitalize %>
+        <%= current_user.first_name.capitalize%>
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+
+          <%= image_tag "fa-home.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul  class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to profile_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
@@ -38,7 +39,7 @@
             </li>
             <li>
               <%= link_to owner_pets_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "MyPets") %>
+                <i class="fa fa-paw"></i>  <%= t(".profile", default: "MyPets") %>
               <% end %>
             </li>
              <li>
