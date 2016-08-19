@@ -1,7 +1,7 @@
 <div class="wrapper">
 
   <div class= "title">
-   <h1> Your pets </h1>
+   <h1> My pets </h1>
   </div>
 
   <% @pets.each do |pet| %>
@@ -13,10 +13,9 @@
       </div>
 
       <div class="pet-body">
-        <h2> <%= pet.name %> </h2>
+        <h3> <%= pet.name %> </h3>
         <p> <%= pet.title%> </p>
         <p> <%= pet.price%>€ / day </p>
-        <p> 3 reviews </p>
       </div>
 
       <ul class="list-unstyled pet-actions">

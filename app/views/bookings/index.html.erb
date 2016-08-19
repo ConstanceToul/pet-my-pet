@@ -1,4 +1,9 @@
-<h3> My bookings as a renter </h3>
+
+<div class="wrapper">
+
+<div class= "title">
+<h1> My bookings </h1>
+</div>
 
  <% @bookings.each do |booking| %>
     <% if booking.status == "Confirmed" && booking.user == current_user %>
@@ -6,7 +11,7 @@
         <div class="pet-photo">
           <%= cl_image_tag booking.pet.photo %>
         </div>
-        <div>
+        <div class="pet-body">
           <h3> <%= booking.pet.name %> </h3>
           <p> <%= booking.pet.price%>€ / day </p>
           <p> Owner: <%= booking.pet.user.first_name %> <%= booking.pet.user.last_name %></p>
@@ -18,7 +23,9 @@
     <% end %>
   <% end %>
 
-<h3> My bookings as an owner </h3>
+<div class= "title">
+<h1> My pets' bookings </h1>
+</div>
 
  <% @bookings.each do |booking| %>
     <% if booking.status == "Confirmed" && booking.pet.user == current_user %>
@@ -26,7 +33,7 @@
         <div class="pet-photo">
           <%= cl_image_tag booking.pet.photo %>
         </div>
-        <div>
+        <div class="pet-body">
           <h3> <%= booking.pet.name %> </h3>
           <p> <%= booking.pet.price%>€ / day </p>
           <p> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
@@ -38,42 +45,28 @@
     <% end %>
   <% end %>
 
+  <div class= "title">
+    <h1> Cancelled bookings </h1>
+  </div>
 
-  <h1>Cancelled Bookings as a renter</h1>
   <% @bookings.each do |booking| %>
-    <% if booking.status == "Cancelled" && booking.user == current_user %>
-      <div class="pet-booking">
-        <div class="pet-photo">
-          <%= cl_image_tag booking.pet.photo %>
-        </div>
-        <div>
-          <h3> <%= booking.pet.name %> </h3>
-          <p> <%= booking.pet.price%>€ / day </p>
-          <p> Owner: <%= booking.pet.user.first_name %> <%= booking.pet.user.last_name %></p>
-        </div>
-        <ul class="list-inline pet-actions">
-          <li><%= link_to "Remove from history", booking_path(booking), method: "delete" %><li>
-        </ul>
-      </div>
+  <% if booking.status == "Cancelled" &&  (booking.pet.user == current_user || booking.user == current_user) %>
+  <div class="pet-booking">
+    <div class="pet-photo">
+      <%= cl_image_tag booking.pet.photo %>
+    </div>
+    <div class="pet-body">
+      <h3> <%= booking.pet.name %> </h3>
+      <p> <%= booking.pet.price%>€ / day </p>
+      <p> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+      <p> Owner: <%= booking.pet.user.first_name %> <%= booking.pet.user.last_name %></p>
+    </div>
+    <ul class="list-inline pet-actions">
+      <li><%= link_to "Remove", booking_path(booking), method: "delete" %><li>
+      </ul>
+    </div>
     <% end %>
-  <% end %>
+    <% end %>
 
-   <h1>Cancelled Bookings as a owner</h1>
-  <% @bookings.each do |booking| %>
-    <% if booking.status == "Cancelled" && booking.pet.user == current_user %>
-      <div class="pet-booking">
-        <div class="pet-photo">
-          <%= cl_image_tag booking.pet.photo %>
-        </div>
-        <div>
-          <h3> <%= booking.pet.name %> </h3>
-          <p> <%= booking.pet.price%>€ / day </p>
-          <p> Renter: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-          <p> Booking status: <%= booking.status %></p>
-        </div>
-        <ul class="list-inline pet-actions">
-          <li><%= link_to "Remove from history", booking_path(booking), method: "delete" %><li>
-        </ul>
-      </div>
-    <% end %>
-  <% end %>
+
+  </div>

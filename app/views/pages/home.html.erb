@@ -1,14 +1,13 @@
-<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= asset_path('backgroundpet.png') %>');">
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,100,0.4) 0%, rgba(0,36,41,0.4) 50%), url('<%= asset_path('Pig.jpg') %>');">
   <div class="banner-content">
-    <h1>Pet My Pet!</h1>
-    <p>Rent wonderful dogs near where you live</p>
-    <%= link_to "Try the experience", root_path, class: "btn btn-primary btn-lg", id: "try" %>
+    <h1>Pet My Pet</h1>
+    <p>Rent beautiful pets near where you live</p>
   </div>
 
   <div class="search">
 
       <%= simple_form_for @pet, url: pets_path, method: :get, html: {class: "form-inline"} do |p| %>
-        <%= p.input :address, placeholder: 'Where do you live?', class: 'form-control flex-item-select', label: false %>
+        <%= p.input :address, placeholder: 'Enter city', class: 'form-control flex-item-select', label: false %>
         <%= p.input :species, collection: Pet::SPECIES, prompt: "Select species", class: 'form-control flex-item-select', label: false %>
         <%= p.button :submit, 'Search', class: 'form-control flex-item-btnsearch btn btn-primary' %>
       <% end %>
