@@ -3,8 +3,8 @@ class PetsController < ApplicationController
 
   def index
     @species = params[:pet][:species]
-    @pets = Pet.all.where(species: @species)
-
+    @address = params[:pet][:address]
+    @pets = Pet.all.where(species: @species, address: @address)
   end
 
   def show

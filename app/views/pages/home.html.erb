@@ -6,11 +6,13 @@
   </div>
 
   <div class="search">
-    <div class="flex-item">
-      <%= simple_form_for @pet, url: pets_path, method: :get do |p| %>
-        <%= p.input :address %>
-        <%= p.input :species, collection: Pet::SPECIES %>
-        <%= p.button :submit %>
+
+      <%= simple_form_for @pet, url: pets_path, method: :get, html: {class: "form-inline"} do |p| %>
+        <%= p.input :address, placeholder: 'Where do you live?', class: 'form-control flex-item-select', label: false %>
+        <%= p.input :species, collection: Pet::SPECIES, prompt: "Select species", class: 'form-control flex-item-select', label: false %>
+        <%= p.button :submit, 'Search', class: 'form-control flex-item-btnsearch btn btn-primary' %>
       <% end %>
-    </div>
+
   </div>
+
+
