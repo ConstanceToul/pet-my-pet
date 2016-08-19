@@ -12625,7 +12625,7 @@ button.close {
 
 /* line 25, /Users/amcdaid/code/ConstanceToul/pet-my-pet/app/assets/stylesheets/pages/_home.scss */
 .search {
-  padding: 15px 30px;
+  padding: 40px 40px;
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;

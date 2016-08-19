@@ -1,17 +1,18 @@
 
 <div class="wrapper">
 
-  <div class="container results">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <div class="container-fluid">
           <div class="row">
             <% if @pets.length > 0 %>
+             <div class="title space">
             <h1><%= @message %></h1>
+             </div>
             <% @pets.each do |pet| %>
             <div class="col-xs-12 col-sm-4">
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= pet.photo.url.nil? ? image_path('cats_in_paris/cat_1.jpg') : pet.photo.url %>);">
-
                 <div class="card-description">
                   <h2><%= pet.name %></h2>
                   <p><%= pet.title %></p>
