@@ -7,26 +7,26 @@
         <div class="container-fluid">
           <div class="row">
             <% if @pets.length > 0 %>
-              <h1>Showing: <%= @species %>s in <%= @address %></h1>
-                <% @pets.each do |pet| %>
-                  <div class="col-xs-12 col-sm-4">
-                    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= pet.photo.url.nil? ? image_path('cats_in_paris/cat_1.jpg') : pet.photo.url %>);">
+            <h1><%= @message %></h1>
+            <% @pets.each do |pet| %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= pet.photo.url.nil? ? image_path('cats_in_paris/cat_1.jpg') : pet.photo.url %>);">
 
-                      <div class="card-description">
-                        <h2><%= pet.name %></h2>
-                        <p><%= pet.title %></p>
-                      </div>
+                <div class="card-description">
+                  <h2><%= pet.name %></h2>
+                  <p><%= pet.title %></p>
+                </div>
 
-                      <div class="card-price">
-                        <p><%= pet.price %>€/day</p>
+                <div class="card-price">
+                  <p><%= pet.price %>€/day</p>
 
-                      </div>
-                      <%= link_to "", pet_path(pet), class: "card-link" %>
-                    </div>
-                  </div>
-                <% end %>
+                </div>
+                <%= link_to "", pet_path(pet), class: "card-link" %>
+              </div>
+            </div>
+            <% end %>
             <% else %>
-              <p>Sorry, there are currently no <%= @species %>s available in <%= @address %></p>
+            <p><%= @message %></p>
             <% end %>
           </div>
         </div>
