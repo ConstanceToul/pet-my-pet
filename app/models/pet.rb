@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
   SPECIES = ["dog", "cat", "ostrich", "monkey", "goat", "rabbit", "hamster", "snake", "rat", "mouse", "chameleon", "swan", "elephant", "pelican", "bird", "tortoise", "gnu", "otter", "pig", "parrot", "lion"].sort
   GENDERS = %w(female male)
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   belongs_to :user
 
   mount_uploader :photo, PhotoUploader
